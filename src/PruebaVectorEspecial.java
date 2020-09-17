@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 /* 1) Crear (instanciacion)............  [HECHO]
  * 2) Llenar (inicializacion)............  [HECHO]
- * 3) obtener inicio
- * 4) obtener fin
- * 5) obtener cantidad de elementos
+ * 3) obtener inicio............  [HECHO]
+ * 4) obtener fin............  [HECHO]
+ * 5) obtener cantidad de elementos............  [HECHO]
  * 6) Mostrar todos los elementos
  * 7) Mostrar elemento del inicio
  * 8) Mostrar elemento del fin
@@ -38,6 +38,21 @@ class VectorEspecial{
 			edades[i] = entrada.nextInt();
 			tamaño++;
 		}
+	}
+	
+	// 3
+	public int obtenerFin() {
+		return 0;
+	}
+	
+	// 4
+	public int obtenerInicio() {
+		return edades.length-1;
+	}
+	
+	// 5
+	public int obtenerCantidadDeElementos() {
+		return edades.length;
 	}
 	
 }
