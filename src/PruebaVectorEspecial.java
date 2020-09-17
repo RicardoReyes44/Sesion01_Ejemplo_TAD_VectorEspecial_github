@@ -2,8 +2,8 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-/* 1) Crear (instanciacion)
- * 2) Llenar (inicializacion)
+/* 1) Crear (instanciacion)............  [HECHO]
+ * 2) Llenar (inicializacion)............  [HECHO]
  * 3) obtener inicio
  * 4) obtener fin
  * 5) obtener cantidad de elementos
@@ -19,7 +19,26 @@ import java.util.Scanner;
 
 class VectorEspecial{
 	
+	// declaracion
+	private int edades[];
+	private int tamaño;
+	Scanner entrada = new Scanner(System.in);
 	
+	public VectorEspecial() {}
+	// 1
+	public VectorEspecial(int tamaño) {
+		// creacion
+		this.edades = new int[tamaño];
+	}
+	
+	// 2
+	public void llenarVector() {
+		for(int i=(tamaño==0)?0:tamaño; i<edades.length; i++) {
+			System.out.println("Ingresa edad " + (i+1) + ": ");
+			edades[i] = entrada.nextInt();
+			tamaño++;
+		}
+	}
 	
 }
 
