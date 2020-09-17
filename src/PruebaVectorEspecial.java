@@ -7,9 +7,9 @@ import java.util.Scanner;
  * 3) obtener inicio............  [HECHO]
  * 4) obtener fin............  [HECHO]
  * 5) obtener cantidad de elementos............  [HECHO]
- * 6) Mostrar todos los elementos
- * 7) Mostrar elemento del inicio
- * 8) Mostrar elemento del fin
+ * 6) Mostrar todos los elementos.............  [HECHO]
+ * 7) Mostrar elemento del inicio.............  [HECHO]
+ * 8) Mostrar elemento del fin.............  [HECHO]
  * 9) Aumentar tamaño del arreglo
  * 10) Dismnuir tamaño del arreglo
  * 11) Insertar elemento en posicion especifica
@@ -53,6 +53,21 @@ class VectorEspecial{
 	// 5
 	public int obtenerCantidadDeElementos() {
 		return edades.length;
+	}
+	
+	// 6
+	public void mostrarVector() {
+		System.out.println(Arrays.toString(edades));
+	}
+	
+	// 7
+	public void mostrarElementoInicio() {
+		System.out.println(edades[0]);
+	}
+	
+	// 8
+	public void mostrarElementoFin() {
+		System.out.println(edades[this.tamaño-1]);
 	}
 	
 }
