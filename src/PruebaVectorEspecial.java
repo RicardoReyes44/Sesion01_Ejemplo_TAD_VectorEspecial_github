@@ -13,9 +13,9 @@ import java.util.Scanner;
  * 8) Mostrar elemento del fin.............  [HECHO]
  * 9) Aumentar tamaño del arreglo.............  [HECHO]
  * 10) Dismnuir tamaño del arreglo.............  [HECHO]
- * 11) Insertar elemento en posicion especifica
- * 12) Eliminar elemento de posicion especifica
- * 13) Invertir el vector
+ * 11) Insertar elemento en posicion especifica.............  [HECHO]
+ * 12) Eliminar elemento de posicion especifica.............  [HECHO]
+ * 13) Invertir el vector.............  [HECHO]
  * */
 
 class VectorEspecial{
@@ -103,6 +103,33 @@ class VectorEspecial{
 			edades = new int[0];
 		}
 		
+	}
+	
+	// 11
+	public void insertarElementoEnPosicion(int posicion) {
+		if(posicion>=0 && posicion<edades.length) {
+			System.out.println("Ingresa elemento: ");
+			edades[posicion] = entrada.nextInt();
+		}
+	}
+	
+	// 12
+	public void eliminarElementoEnPosicion(int posicion) {
+		if(posicion>=0 && posicion<edades.length) {
+			edades[posicion] = 0;
+		}		
+	}
+	
+	//13
+	public void invertirVector() {
+		int edadesTemp[] = edades.clone();
+		int a=0;
+		
+		for(int i=edadesTemp.length-1; i>=0; i--) {
+			System.out.println(edades[a] + " " + edadesTemp[i]);
+			edades[a] = edadesTemp[i];
+			a++;
+		}
 	}
 	
 }
