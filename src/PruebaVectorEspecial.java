@@ -131,13 +131,23 @@ class VectorEspecial{
 	public void insertarElementoEnPosicion() throws InputMismatchException{
 		byte posicion=-1;
 		
-		while(posicion<0) {
+		while(!(posicion>=0 && posicion<edades.length)) {
 		    System.out.println("Ingresa la posicion: ");
 		    posicion = entrada.nextByte();
 		
 		    if(posicion>=0 && posicion<edades.length) {
-			    System.out.println("Ingresa elemento: ");
-			    edades[posicion] = entrada.nextInt();
+		    	int edad=0;
+		    	
+		    	while(edad<=0) {
+		    		System.out.println("Ingresa edad: ");
+				    edad = entrada.nextInt();
+				    
+				    if(edad<=0) {
+				    	System.out.println("No se puede guardar esa edad");
+				    }else {
+				    	edades[posicion] = edad;
+				    }
+		    	}
 		    }else {
 			    System.out.println("Posicion inexistente, por favor vuelve a intentarlo");
 		    }
@@ -148,12 +158,11 @@ class VectorEspecial{
 	public void eliminarElementoEnPosicion() throws InputMismatchException{
 		byte posicion=-1;
 		
-		while(posicion<=0) {
+		while(!(posicion>=0 && posicion<edades.length)) {
 			System.out.println("Ingresa la posicion: ");
 		    posicion = entrada.nextByte();
 		
 		    if(posicion>=0 && posicion<edades.length) {
-		    	System.out.println("El vector debe de tener al menos un espacio");
 			    edades[posicion] = 0;
 		    }else {
 			    System.out.println("Posicion inexistente, por favor vuelve a intentarlo");
@@ -168,7 +177,6 @@ class VectorEspecial{
 		    int a=0;
 		
 		    for(int i=edadesTemp.length-1; i>=0; i--) {
-			    System.out.println(edades[a] + " " + edadesTemp[i]);
 			    edades[a] = edadesTemp[i];
 			    a++;
 		    }
@@ -178,7 +186,7 @@ class VectorEspecial{
 	}
 	
 	public void limpieza() {
-		System.out.println("Sera enviado al menu...\nlimpiando entradas...\nliberando memoria\n\n");
+		System.out.println("Sera enviado al menu...\nlimpiando entradas...\nliberando memoria\n");
 		entrada.nextLine();
 	}
 	
@@ -273,7 +281,7 @@ public class PruebaVectorEspecial {
 			    	throw new InputMismatchException("Esa opcion no existe, por favor prueba de nuevo");
 			    }
 			}catch(InputMismatchException e) {
-				System.out.println("Entrada invalida: <" + e + ">");
+				System.out.println("\nEntrada invalida: <" + e + ">\n");
 				entrada.nextLine();
 				ve.limpieza();
 			}
